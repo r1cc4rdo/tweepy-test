@@ -39,12 +39,10 @@ def create_lists():
             api.add_list_member(screen_name=screen_name, list_id=list_obj.id)
             total_count += 1
 
-    print(f'Added a total of{total_count} handles in {len(lists)} lists')
+    print(f'Added a total of {total_count} handles in {len(lists)} lists')
 
 
 if __name__ == '__main__':
-
     with open('secrets.json', 'r') as json_in:
         create_api_endpoint(json.load(json_in))
-
-    create_lists()
+        create_lists()
